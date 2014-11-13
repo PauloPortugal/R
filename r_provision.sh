@@ -1,4 +1,4 @@
-#! /bin/bash R
+#! /bin/bash
 
 echo "Installing R ..."
 if [ -f /usr/bin/R ]; then 
