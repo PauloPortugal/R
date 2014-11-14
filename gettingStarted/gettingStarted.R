@@ -1,2 +1,3 @@
 #!/usr/bin/Rscript
-cat("Hello World\n")
+
+# Title 1

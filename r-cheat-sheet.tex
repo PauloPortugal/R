@@ -1,0 +1,228 @@
+\documentclass{article}
+
+%% Font related
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[T1]{fontenc}
+\usepackage{courier}
+%\renewcommand*\familydefault{\ttdefault} %% Only if the base font of the document is to be typewriter style
+
+%\usepackage[zerostyle=d]{newtxtt} %% Various versions of zeros available. See documentation for details
+
+%% Document related
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{flushend}
+
+%% Maths related 
+\usepackage{mathtools}
+
+%% Figure related packages
+\usepackage{graphicx}
+\usepackage{float}
+
+%% Table related
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\definecolor{lightgray1}{gray}{0.86}
+\definecolor{lightgray2}{gray}{0.9}
+\definecolor{lightgray3}{gray}{0.5}
+\usepackage{multirow}
+
+%% Multi-columns related
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+
+%% Document Sections related
+\usepackage{titlesec}
+\usepackage{tikz}
+\usetikzlibrary{shapes.misc}
+\newcommand\titlebar{%
+\tikz[baseline,trim left=3.1cm,trim right=3cm] {
+    \fill [cyan!25] (2.5cm,-1ex) rectangle (\textwidth-\textwidth/3, 2.5ex);
+    \node [
+        fill=cyan!60!white,
+        anchor= base east,
+        rounded rectangle,
+        minimum height=3.5ex] at (3cm,0) {
+        \textbf{\thesection.}
+    };
+}%
+}
+\titleformat{\section}{\large}{\titlebar}{0.1cm}{}
+\renewcommand*{\thesection}{\arabic{section}}
+
+
+%% Document title related
+\title{
+  \textbf{R Cheat sheet}
+}
+\author{by Paulo Monteiro}
+\date{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BEGIN DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+  \begin{multicols}{2}
+  \maketitle
+
+  \section{\textbf{Getting Started}}
+  \rowcolors{1}{lightgray1}{lightgray2}
+  \begin{tabularx}{\textwidth/2}{X|l}
+    \texttt{\textbf{ x = 16; y $<-$"a string"}}\\
+    \color{lightgray3}Assigning a value to an object/variable. R is case sensitive\\
+    \hline
+    
+    \texttt{\textbf{ls(); objects()}}\\
+    \color{lightgray3}Lists all the objects created in the workspace memory\\
+    \hline
+    
+    \texttt{\textbf{rm(y)}}\\
+    \color{lightgray3}Removes an object from the workspace memory\\
+    \hline
+    
+    \texttt{\textbf{exp(x); sqrt(16); log(x); abs(x)}}\\
+    \color{lightgray3}A few math operations allowed\\
+    \hline
+  \end{tabularx}
+
+  \section{\textbf{Vectors, Lists and Matrices}}
+  \rowcolors{1}{lightgray1}{lightgray2}
+  \begin{tabularx}{\textwidth/2}{X|l}
+    \texttt{\textbf{x1=c(1,2,3,4,5); colours=c("blue", "red")}}\\
+    \color{lightgray3}Creating a vector of integers and strings\\
+    \hline
+    
+    \texttt{\textbf{2:9; seq(from=2, to=10, by=1)}}\\
+    \color{lightgray3}Creating a sequence of values\\
+    \hline
+    
+    \texttt{\textbf{rep(1,times=5);rep("hello",times=5)}}\\
+    \color{lightgray3}Repeat a number '1' or string 'hello' 5 times\\
+    \hline
+    
+    \texttt{\textbf{x=1:5; y=x+10}}\\
+    \color{lightgray3}Creating a list and adding 10 to each element (*, /, - and + apply)\\
+    \hline
+    
+    \texttt{\textbf{x=1:5; y=5:1; x+y}}\\
+    \color{lightgray3}if two vectors are of the same length we may add/subtract/mult/div its elements\\
+    \hline
+    
+    \texttt{\textbf{x=1:5; x[1]=16}}\\
+    \color{lightgray3}Assigning 16 to index '1' of vector x\\
+    \hline
+    
+    \texttt{\textbf{y[c(1,3)]}}\\
+    \color{lightgray3}Select the first two elements of vector y\\
+    \hline
+    
+    \texttt{\textbf{y[-c(1,3)]}}\\
+    \color{lightgray3}Select all elements of vector y apart from the two first elements\\
+    \hline
+    
+    \texttt{\textbf{y[y<3]}}\\
+    \color{lightgray3}Select all elements less than 3 from vector y\\
+    \hline 
+  \end{tabularx}
+  
+
+  \begin{tabularx}{\textwidth/2}{X|l}  
+    \texttt{\textbf{mat=matrix(c(1,2,3,4,5,6,7,8,9), nrow=3, byrow=TRUE)}}\\
+    \color{lightgray3}Create a matrix 3x3 with values entered by row\\
+    \hline
+     
+    \texttt{\textbf{mat[1,2]}}\\
+    \color{lightgray3}Extract an element from the matrix\\
+    \hline
+    
+    \texttt{\textbf{mat[c(1,3),2]}}\\
+    \color{lightgray3}Return elements 1 and 3 from column 2\\
+    \hline
+    
+    \texttt{\textbf{mat[,1]}}\\
+    \color{lightgray3}Return all elements from column 1\\
+    \hline
+    
+    \texttt{\textbf{mat[2,]}}\\
+    \color{lightgray3}Return all elements from the second row\\
+    \hline
+    
+    \texttt{\textbf{mat*10}}\\
+    \color{lightgray3}Multiply all elements by 10\\
+    \hline
+  \end{tabularx}
+  
+  \section{\textbf{Import data from CSV and TXT}}
+  \rowcolors{1}{lightgray1}{lightgray2}
+  \begin{tabularx}{\textwidth/2}{X|l}  
+     \texttt{\textbf{}}\\
+    \\
+    \hline
+    
+    \texttt{\textbf{}}\\
+    \\
+    \hline
+    
+     \texttt{\textbf{}}\\
+    \\
+    \hline
+    
+    \texttt{\textbf{}}\\
+    \\
+    \hline
+    
+     \texttt{\textbf{}}\\
+    \\
+    \hline
+    
+    \texttt{\textbf{}}\\
+    \\
+    \hline
+    
+     \texttt{\textbf{}}\\
+    \\
+    \hline
+    
+    \texttt{\textbf{}}\\
+    \\
+    \hline
+    
+    \texttt{\textbf{}}\\
+    \\
+    \hline
+    
+     \texttt{\textbf{}}\\
+    \\
+    \hline
+    
+    \texttt{\textbf{}}\\
+    \\
+    \hline
+    
+     \texttt{\textbf{}}\\
+    \\
+    \hline
+    
+    \texttt{\textbf{}}\\
+    \\
+    \hline
+    
+     \texttt{\textbf{}}\\
+    \\
+    \hline
+    
+    \texttt{\textbf{}}\\
+    \\
+    \hline
+  \end{tabularx}
+
+    
+  \section{\textbf{Getting Started}}
+
+  \newpage
+  \pagebreak
+
+  \end{multicols}
+\end{document}
