@@ -35,4 +35,4 @@ else
   else
     echo "Encountered problems downloading the file"
   fi 
-#fi
+fi
